@@ -10,6 +10,7 @@
   "author": "Tanvir Mahin",
   "license": "MIT",
   "dependencies": {
+    "arg": "^5.0.1",
     "chalk": "^5.0.0",
     "chalk-animation": "^1.6.0",
     "inquirer": "^8.2.0",

@@ -1,7 +1,7 @@
-const jsTemplate = (component) => {
+const jsTemplate = (component, type) => {
   return `
 import React from 'react';
-import styles from './${component}.module.css';
+import styles from './${component}.module.${type}';
 
 const ${component} = () => {
 

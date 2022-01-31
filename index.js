@@ -1,34 +1,35 @@
 #!/usr/bin/env node
 
-import chalkAnimation from "chalk-animation";
 import {
   createJsFile,
   createIndexFile,
   createCssFile,
   createDir,
 } from "./helpers/index.js";
+import { argsToConfig, getCssTypePrompt } from "./utils/index.js";
 
-const rainbowTitle = chalkAnimation.rainbow(
-  "Your React Component is genarating\n"
-);
+// Valid CSS file types
+const validCssTypes = ["scss", "css", "sass"];
 
 // Get Command Line Args
-const componentName = process.argv.slice(2)[0];
+let options = argsToConfig();
+if (!validCssTypes.includes(options.css)) {
+  options = await getCssTypePrompt(options);
+}
 
 // Get Command Execution Path
-const executionPath = process.cwd();
-const dir = `./${componentName}`;
+const dir = `./${options.name}`;
 
 // Create Directory
-createDir(componentName, dir);
+createDir(options.name, dir);
 
 // Genrate JS File
-createJsFile(componentName, dir);
-
-// Genrate CSS File
-createCssFile(componentName, dir);
+createJsFile(options.name, dir, options.css);
 
 // Genrate index File
-createIndexFile(componentName, dir);
+if (options.index) {
+  createIndexFile(options.name, dir);
+}
 
-rainbowTitle.stop();
+// Genrate CSS File
+createCssFile(options.name, dir, options.css);
