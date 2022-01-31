@@ -1,0 +1,18 @@
+{
+  "name": "compgen",
+  "version": "0.0.1",
+  "description": "This is a CLI tool that makes react boilerplate component with css modules file and index file to export the component.  ",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Tanvir Mahin",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^5.0.0",
+    "chalk-animation": "^1.6.0",
+    "inquirer": "^8.2.0",
+    "nanospinner": "^1.0.0"
+  }
+}
