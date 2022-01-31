@@ -29,6 +29,6 @@ createJsFile(componentName, dir);
 createCssFile(componentName, dir);
 
 // Genrate index File
-createIndexFile(dir);
+createIndexFile(componentName, dir);
 
 rainbowTitle.stop();

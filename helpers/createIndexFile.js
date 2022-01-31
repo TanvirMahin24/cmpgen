@@ -1,9 +1,10 @@
 import * as fs from "fs";
 import { createSpinner } from "nanospinner";
+import { indexTemplate } from "../templates/index.js";
 
-const createIndexFile = (dir) => {
+const createIndexFile = (componentName, dir) => {
   const spinnerIndex = createSpinner("Index File Genarating").start();
-  fs.writeFile(`${dir}/index.js`, "", function (err) {
+  fs.writeFile(`${dir}/index.js`, indexTemplate(componentName), function (err) {
     if (err) {
       spinnerIndex.error("Index File Genaratig");
       throw err;

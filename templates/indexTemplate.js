@@ -1,7 +1,9 @@
 const indexTemplate = (component) => {
   return `
-        import ${component} from './${component}';
+import ${component} from './${component}';
 
-        export {${component}};
-    `;
+export { ${component} };
+`;
 };
+
+export default indexTemplate;
