@@ -4,13 +4,17 @@ import { indexTemplate } from "../templates/index.js";
 
 const createIndexFile = (componentName, dir) => {
   const spinnerIndex = createSpinner("Index File Genarating").start();
-  fs.writeFile(`${dir}/index.js`, indexTemplate(componentName), function (err) {
-    if (err) {
-      spinnerIndex.error("Index File Genaratig");
-      throw err;
+  fs.writeFile(
+    `${dir}/${componentName}/index.js`,
+    indexTemplate(componentName),
+    function (err) {
+      if (err) {
+        spinnerIndex.error("Index File Genaratig");
+        throw err;
+      }
+      spinnerIndex.success("Index Genarated");
     }
-    spinnerIndex.success("Index Genarated");
-  });
+  );
 };
 
 export default createIndexFile;

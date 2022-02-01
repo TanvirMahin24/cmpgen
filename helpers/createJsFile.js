@@ -5,7 +5,7 @@ import { jsTemplate } from "../templates/index.js";
 const createJsFile = (componentName, dir, type) => {
   const spinnerJs = createSpinner("JavaScript File Genarating").start();
   fs.writeFile(
-    `${dir}/${componentName}.js`,
+    `${dir}/${componentName}/${componentName}.js`,
     jsTemplate(componentName, type),
     function (err) {
       if (err) {

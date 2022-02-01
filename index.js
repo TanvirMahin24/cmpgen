@@ -6,30 +6,30 @@ import {
   createCssFile,
   createDir,
 } from "./helpers/index.js";
-import { argsToConfig, getCssTypePrompt } from "./utils/index.js";
+import { argsToConfig, getCssTypePrompt, getConfFile } from "./utils/index.js";
 
 // Valid CSS file types
 const validCssTypes = ["scss", "css", "sass"];
 
 // Get Command Line Args
 let options = argsToConfig();
+options = getConfFile(options);
+
+// Check valid CSS file type
 if (!validCssTypes.includes(options.css)) {
   options = await getCssTypePrompt(options);
 }
 
-// Get Command Execution Path
-const dir = `./${options.name}`;
-
 // Create Directory
-createDir(options.name, dir);
+createDir(options.name, options.dir);
 
 // Genrate JS File
-createJsFile(options.name, dir, options.css);
+createJsFile(options.name, options.dir, options.css);
 
 // Genrate index File
 if (options.index) {
-  createIndexFile(options.name, dir);
+  createIndexFile(options.name, options.dir);
 }
 
 // Genrate CSS File
-createCssFile(options.name, dir, options.css);
+createCssFile(options.name, options.dir, options.css);

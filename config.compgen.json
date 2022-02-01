@@ -1,0 +1,5 @@
+{
+    "index": true,
+    "css": "scss",
+    "dir": "./src/components"
+}
