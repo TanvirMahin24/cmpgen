@@ -5,6 +5,9 @@
   "main": "index.js",
   "repository": "TanvirMahin24/cmpgen",
   "homepage": "https://devnops.tech/cmpgen/",
+  "keywords": [
+    "cmpgen", "react", "component genarator", "css", "css-modules", "boilerplate"
+  ],
   "type": "module",
   "bin": {
     "cmpgen": "./index.js"
