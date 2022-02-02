@@ -12,8 +12,14 @@ import { argsToConfig, getCssTypePrompt, getConfFile } from "./utils/index.js";
 const validCssTypes = ["scss", "css", "sass"];
 
 // Get Command Line Args
-let options = argsToConfig();
+let options = {
+  name: "NewComponent",
+  index: false,
+  css: "css",
+  dir: "./",
+};
 options = getConfFile(options);
+options = argsToConfig(options);
 
 // Check valid CSS file type
 if (!validCssTypes.includes(options.css)) {

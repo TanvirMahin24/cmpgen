@@ -2,8 +2,8 @@ import * as fs from "fs";
 
 const getConfFile = (options) => {
   try {
-    if (fs.existsSync("config.compgen.json")) {
-      const data = fs.readFileSync("config.compgen.json", {
+    if (fs.existsSync("config.cmpgen.json")) {
+      const data = fs.readFileSync("config.cmpgen.json", {
         encoding: "utf8",
         flag: "r",
       });

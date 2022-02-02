@@ -1,14 +1,7 @@
 import arg from "arg";
 import chalk from "chalk";
 
-const argsToConfig = () => {
-  let defaultConfig = {
-    name: "NewComponent",
-    index: false,
-    css: "css",
-    dir: "./NewComponent",
-  };
-
+const argsToConfig = (defaultConfig) => {
   const rawArgs = process.argv;
   const args = arg(
     {
@@ -50,7 +43,7 @@ const argsToConfig = () => {
     index: args["--index"] || defaultConfig.index,
     css: (args["--css"] && args["--css"].toLowerCase()) || defaultConfig.css,
     name: args._[0] || defaultConfig.name,
-    dir: `./`,
+    dir: defaultConfig.dir,
   };
 };
 
