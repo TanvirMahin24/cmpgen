@@ -1,11 +1,14 @@
 {
-  "name": "@tanvirmahin24/compgen",
+  "name": "cmpgen",
   "version": "0.0.1",
-  "description": "This is a CLI tool that makes react boilerplate component with css modules file and index file to export the component.  ",
+  "description": "This is a CLI tool that makes react boilerplate component with css modules file and index file to export the component.",
   "main": "index.js",
-  "repository": "TanvirMahin24/compgen",
-  "homepage": "https://devnops.tech/compgen/",
+  "repository": "TanvirMahin24/cmpgen",
+  "homepage": "https://devnops.tech/cmpgen/",
   "type": "module",
+  "bin": {
+    "cmpgen": "./index.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
